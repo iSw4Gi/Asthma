@@ -1,0 +1,209 @@
+/* Apply gradient background to the entire body */
+body {
+  background: linear-gradient(135deg, #29363f, #ffffff);
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out elements vertically */
+}
+
+/* Header Card */
+.header-card {
+  background: linear-gradient(145deg, #ffffff, #f1f1f1);
+  padding: 12px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Patient Info Circle */
+.profile-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #29363f, #a1adbe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+/* Patient Details */
+.patient-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.text-danger {
+  font-weight: bold;
+}
+
+/* App Title */
+.app-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #29363f;
+  margin: 0;
+}
+
+h6,
+small {
+  margin: 0;
+}
+
+/* Status Card */
+.status-card {
+  max-width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.status-card:hover {
+  transform: scale(1.03);
+}
+
+.status-card.green {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-card.yellow {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-card.red {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* General Button Styling */
+button {
+  border-radius: 50px; /* Rounded buttons */
+  font-size: 0.85rem; /* Slightly smaller font */
+  font-weight: 600;
+  padding: 8px 18px; /* Slightly smaller padding */
+  transition: all 0.3s ease;
+}
+
+/* Status Change Buttons - Make buttons appear side by side */
+.d-flex-buttons {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+  justify-content: center;
+  flex-wrap: wrap; /* Wrap if the screen is too small */
+  margin-top: 20px;
+}
+
+/* Modify Button Styles */
+.btn-success,
+.btn-warning,
+.btn-danger {
+  padding: 10px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+}
+
+.btn-success:hover {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-warning:hover {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Info and Call Doctor Buttons */
+.btn-info,
+.btn-outline-dark {
+  padding: 8px;
+  font-size: 0.85rem;
+  border-radius: 50px;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+  border-color: #138496;
+}
+
+/* Call Doctor Button (More Attention-Grabbing) */
+#call-doctor-button {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  border-radius: 50px;
+}
+
+#call-doctor-button:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
+}
+/* Adjust button container to display buttons side by side */
+.status-change-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;  /* Adjust the gap between buttons */
+}
+
+.status-change-buttons .btn {
+  flex: 1;  /* Make buttons take equal space */
+}
+
+/* Block Button Styling for Modals */
+.btn-block {
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+/* Modal Styling */
+.modal-header {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+  font-size: 1rem;
+}
+
+.modal-body {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Button Container Styling */
+.d-grid {
+  max-width: 320px;
+  margin: 15px auto;
+}
+
+/* Button Container for status change buttons */
+.d-flex-buttons .btn {
+  flex: 1;
+  max-width: 200px; /* Ensures buttons don't grow too large */
+}
+
+/* Modal Styling */
+.modal-dialog {
+  max-width: 400px;
+  margin: 15px auto;
+}
