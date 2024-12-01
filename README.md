@@ -1,4 +1,4 @@
-# Asthma App - README
+# Asthma App Core
 
 ## Overview
 
