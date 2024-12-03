@@ -39,7 +39,7 @@ function updateDateTime() {
     // Update Plan Details in Modal
     document.getElementById("plan-details").textContent = statusPlan.textContent;
   }
-  
+
   // Initialize
   document.addEventListener("DOMContentLoaded", () => {
     updateDateTime();
