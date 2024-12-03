@@ -6,8 +6,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Space out elements vertically */
-}
+  justify-content: flex-start; /* Align the content at the top */}
 
 /* Header Card */
 .header-card {
@@ -208,63 +207,175 @@ button {
   margin: 15px auto;
 }
 
-
+/* Footer Styling */
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #520066;
+  background: linear-gradient(135deg, #520066, #6a1b9a);
   color: white;
   border-radius: 20px 20px 0 0;
   padding: 10px 0;
-  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 10; /* Make sure the footer stays below the modals */
+  transition: all 0.3s ease-in-out;
 }
 
+/* Navbar for bottom navigation */
 .navbar-nav {
   display: flex;
+  position: fixed;
   justify-content: space-around;
   width: 100%;
-}
-
-.navbar-nav .nav-item {
-  text-align: center;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(135deg, #520066, #6a1b9a);
+  box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 10; /* Make sure the footer stays below the modals */
+  bottom: 0;
+  left: 0;
+  padding: 10px 0;
 }
 
 .nav-item a {
   color: white;
+  font-size: 18px;
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+}
+
+.nav-item a:hover {
+  color: #f8c202;
+  transform: scale(1.1);
+}
+
+/* Button hover effect for increased visual impact */
+.nav-item button {
+  background: #f8c202;
+  border-color: #f8c202;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.nav-item button:hover {
+  background: #d49a00;
+  border-color: #d49a00;
+}
+
+/* Call Doctor Button */
+#call-doctor-button {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+#call-doctor-button:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
+}
+
+/* Ensure the buttons look distinct and animated */
+.navbar-nav .nav-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-nav .nav-item i {
   font-size: 24px;
   transition: transform 0.3s ease-in-out;
 }
 
-.nav-item a:hover {
-  color: #a1adbe;
+.navbar-nav .nav-item i:hover {
   transform: scale(1.2);
 }
 
-.nav-item.active a {
-  color: #e8ece0;
+/* Ensure the modals are displayed above footer */
+.modal-backdrop {
+  z-index: 1040 !important; /* Ensure backdrop is also above the footer */
+}
+
+.modal-dialog {
+  z-index: 1050 !important; /* Ensure modal dialog is above footer */
+}
+
+/* Call Doctor Button */
+#call-doctor-button {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+/* Hide call doctor button by default */
+#call-doctor-button.d-none {
+  display: none;
+}
+
+/* Button container */
+.status-change-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Adjust position of modal buttons */
+.btn-outline-dark {
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 18px;
+}
+
+/* Button Styling */
+.btn {
+  border-radius: 50px; /* Rounded buttons */
+  font-size: 0.85rem; /* Slightly smaller font */
+  font-weight: 600;
+  padding: 8px 18px;
+}
+
+/* Ensure that the button content doesn't overlap */
+.btn-block {
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+/* Modal Styles */
+.modal-header {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-body {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.d-flex-buttons .btn {
+  flex: 1;
+  max-width: 200px; /* Ensures buttons don't grow too large */
 }
 
 @media (max-width: 768px) {
-  .header-card, .status-card-container {
-      padding: 10px;
+  .status-card-container, .status-change-buttons {
+    padding: 10px;
   }
 
-  .btn {
-      width: 100%;
-  }
-
-  /* Smaller profile image for mobile */
-  .profile-circle {
-      width: 40px;
-      height: 40px;
-      font-size: 14px;
-  }
-
-  /* Adjust button size */
   .status-change-buttons .btn {
-      font-size: 14px;
+    font-size: 14px;
   }
 }
 

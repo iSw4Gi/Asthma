@@ -8,13 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<!-- Web App Manifest -->
-<link rel="manifest" href="manifest.json">
-<!-- Apple-specific meta tags for app-like behavior -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Asthma Care App">
-
 </head>
 <body>
 <!-- Header Section -->
@@ -56,11 +49,7 @@
 <button class="btn btn-danger btn-lg" onclick="changeStatus('red')">Set Red</button>
 </div>
 
-<!-- Help Section -->
-<div class="text-center mt-4">
-<button class="btn btn-info btn-lg mb-3" data-bs-toggle="modal" data-bs-target="#helpModal">Help (Q&A)</button>
-<button class="btn btn-danger btn-lg d-none" id="call-doctor-button" data-bs-toggle="modal" data-bs-target="#doctorModal">Call Your Doctor</button>
-</div>
+
 
 <!-- Plan Modal -->
 <div class="modal fade" id="planModal" tabindex="-1" aria-labelledby="planModalLabel" aria-hidden="true">
@@ -126,17 +115,31 @@
 
 <!-- Bottom Navigation Bar -->
 <footer>
-<nav class="navbar navbar-expand navbar-dark">
-    <ul class="navbar-nav w-100">
-        <li class="nav-item active">
-            <a class="nav-link" href="index.html">
-                <i class="fas fa-home"></i><br>Home
-            </a>
-        </li>
-
-    </ul>
-</nav>
+    <!-- Navbar for Bottom Navigation -->
+    <nav class="navbar navbar-expand navbar-dark fixed-bottom">
+        <ul class="navbar-nav w-100">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-home"></i><br>Home
+                </a>
+            </li>
+            <!-- Help Button -->
+            <li class="nav-item">
+                <button class="nav-link btn btn-info" data-bs-toggle="modal" data-bs-target="#helpModal">
+                    <i class="fas fa-question-circle"></i><br>Help
+                </button>
+            </li>
+            <!-- Call Doctor Button -->
+            <li class="nav-item">
+                <button class="nav-link btn btn-danger" id="call-doctor-button" data-bs-toggle="modal" data-bs-target="#doctorModal">
+                    <i class="fas fa-phone-alt"></i><br>Call Doctor
+                </button>
+            </li>
+        </ul>
+    </nav>
 </footer>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="app.js"></script>
 </body>
