@@ -245,3 +245,35 @@ footer {
 .nav-item.active a {
   color: #e8ece0;
 }
+
+@media (max-width: 768px) {
+  .header-card, .status-card-container {
+      padding: 10px;
+  }
+
+  .btn {
+      width: 100%;
+  }
+
+  /* Smaller profile image for mobile */
+  .profile-circle {
+      width: 40px;
+      height: 40px;
+      font-size: 14px;
+  }
+
+  /* Adjust button size */
+  .status-change-buttons .btn {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-card h1 {
+      font-size: 1.5em;
+  }
+
+  .header-card h6 {
+      font-size: 1em;
+  }
+}
