@@ -30,17 +30,17 @@
 </div>
 </div>
 
-
 <!-- Status Card -->
 <div class="status-card-container text-center mt-4">
-<div class="card shadow status-card mx-auto" id="status-card">
-    <div class="card-body p-4">
+    <div class="card shadow status-card mx-auto" id="status-card">
+      <div class="card-body p-4">
         <h5 id="status-text" class="fw-bold">Status: Green</h5>
         <p id="status-plan" class="text-muted">Plan: Ventolin as needed.</p>
-        <button class="btn btn-outline-dark mt-3 btn-block" data-bs-toggle="modal" data-bs-target="#planModal">View Plan</button>
+        <!-- The button triggers the modal -->
+        <button class="btn btn-outline-dark mt-3 btn-block" data-bs-toggle="modal" data-bs-target="#planModal" id="view-plan-button">View Plan</button>
+      </div>
     </div>
-</div>
-</div>
+  </div>
 
 <!-- Status Change Buttons -->
 <div class="status-change-buttons mt-4">
