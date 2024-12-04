@@ -1,3 +1,6 @@
+
+---
+
 # Asthma App Core
 
 ## Overview
@@ -12,7 +15,6 @@ The **Asthma App** is a comprehensive mobile application designed to help users 
 - **Medication Reminders**: Set reminders for inhaler use, medication doses, and upcoming doctor visits.
 - **Emergency Alerts**: Immediate notifications if critical vitals are detected outside safe ranges, aiding early detection of asthma attacks.
 - **Reports & History**: Review past data, generate health reports, and share them with healthcare providers for informed decision-making.
-
 
 ## Usage
 
@@ -49,9 +51,75 @@ The app provides an intuitive dashboard for easy access to key information, incl
 
 We take your privacy seriously. All data is encrypted and stored securely. We comply with applicable health data protection laws (such as HIPAA) to ensure that your information remains private and secure. You can view and manage your data preferences through the app’s settings.
 
+## Device Architecture
+
+### Basic Components of the Device
+
+#### 1. **Sensors:**
+
+- **Oxygen Saturation Sensor (Pulse Oximeter Sensor):**
+  - Example: MAX30102 or MAX30100.
+  - Used to measure the blood oxygen saturation and heart rate.
+
+- **Pressure/Flow Sensor for Nebulizer:**
+  - Example: MPX5700AP, used to measure the pressure inside the nebulizer or monitor the airflow.
+
+#### 2. **Microcontroller:**
+- Choose a small and efficient unit to process data and send it to the server:
+  - **ESP32**: Supports both Wi-Fi and Bluetooth connections.
+
+#### 3. **Internet Connectivity:**
+- **SIM Module for Cellular Connection (4G/LTE):**
+  - Example: SIM800L or SIM7600G.
+
+#### 4. **Display:**
+- A small screen to display the measurements locally on the device.
+  - Example: **OLED Display** using the I2C protocol.
+
+#### 5. **Battery and Power Source:**
+- **Li-ion 3.7V Battery**: With a charging module like **TP4056** to provide portable power for the device.
+- **Voltage Regulator**: Such as **AMS1117** to regulate the voltage for the components.
+
+#### 6. **Control Software:**
+- **Firmware**: Written in languages like Arduino IDE or MicroPython to control the sensors and manage server communication.
+- **API Interface**: For uploading data to the server using HTTP/HTTPS or MQTT protocols.
+
+---
+
+## Server Architecture:
+
+### 1. **Device Sends Data to Server via Internet:**
+- Use **REST API** or **MQTT Broker** to send data from the device to the server.
+
+### 2. **Database:**
+- Store health data in a database like **MySQL** or **MongoDB**.
+
+### 3. **User Interface:**
+- Develop a dashboard to display real-time health data using technologies like **React.js** or **Angular**.
+
+---
+
+## Component Table:
+
+| Component                 | Type/Model      | Description                                             |
+|---------------------------|-----------------|---------------------------------------------------------|
+| Oxygen Sensor             | MAX30102        | Used to measure oxygen saturation and heart rate.       |
+| Pressure Sensor for Nebulizer | MPX5700AP     | Monitors airflow or pressure in the nebulizer.          |
+| Microcontroller            | ESP32           | Processes data and sends it via Wi-Fi.                 |
+| Cellular Connectivity Module (Optional) | SIM800L  | Provides internet connectivity via cellular network.   |
+| Display (Optional)        | OLED Display 0.96” | Displays measurements locally.                          |
+| Battery                   | Li-ion 3.7V     | Provides portable power.                               |
+| Battery Charger           | TP4056          | Safely charges the battery.                            |
+| Voltage Regulator         | AMS1117         | Regulates voltage for the components.                  |
+
+---
+
+![Asthma Device Diagram](images/device_diagram.png)
 
 ## Conclusion
 
 The **Asthma App** is designed to empower asthma patients with the tools they need to effectively manage their condition. By seamlessly tracking device usage and vital signs, the app offers a convenient way to stay on top of your asthma management, detect potential issues early, and make informed decisions about your health. 
 
 Stay safe, and breathe easier with the **Asthma App**!
+
+---
